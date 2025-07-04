@@ -1,0 +1,2 @@
+let test#python#runner = 'djangotest'
+let test#python#djangotest#executable = 'uv run python manage.py test'

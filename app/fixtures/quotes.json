@@ -1,0 +1,20 @@
+[
+  {
+    "model": "app.quote",
+    "pk": 1,
+    "fields": {
+      "text": "'Why do you not go down yourself?' said, 'Because I do not even consider the question.' For when a man once lowers himself to think about such matters, and to value external things and calculate about them he has almost forgotten his own character.",
+      "author": "Epictetus",
+      "created_at": "2025-07-04T17:00:00Z"
+    }
+  },
+  {
+    "model": "app.quote",
+    "pk": 2,
+    "fields": {
+      "text": "A mind is like a parachute. It doesn't work if it is not open.",
+      "author": "Frank Zappa",
+      "created_at": "2025-07-04T17:00:01Z"
+    }
+  }
+]

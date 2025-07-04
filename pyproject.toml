@@ -1,0 +1,25 @@
+[project]
+name = "quotevote"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.2.4",
+]
+
+[dependency-groups]
+dev = [
+    "bandit>=1.8.5",
+    "django-debug-toolbar>=5.2.0",
+    "isort>=6.0.1",
+    "jedi>=0.19.2",
+    "pdbpp>=0.11.6",
+    "rope>=1.13.0",
+    "ropevim>=0.8.1",
+    "ruff>=0.12.2",
+    "wily>=1.25.0",
+]
+prod = [
+    "gunicorn>=23.0.0",
+]
