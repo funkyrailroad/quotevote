@@ -1,10 +1,33 @@
-<a href="{% url 'quote-list' %}">
-  List Quotes
-</a>
+{% extends "app/base.html" %}
 
-<a href="{% url 'vote-on-quotes-create' %}">
-  Create a vote
-</a>
+{% block content %}
+
+<h1>Quotes</h1>
+
+<div>
+  <a href="{% url 'quote-list' %}">
+    List Quotes
+  </a>
+</div>
+
+<div>
+  <a href="{% url 'vote-on-quotes-create' %}">
+    Create a vote
+  </a>
+</div>
+
+<div>
+  <a href="{% url 'vote-on-quotes-create-vote-pair' %}">
+    Get pair to vote on
+  </a>
+</div>
+
+
+<h1>Votes on Quotes</h1>
+<div>
+  <a href="{% url 'vote-on-quotes-list' %}">
+    List Votes on Quotes
+  </a>
 
 <form action="{% url 'accounts:login' %}" method="get">
   <button type="submit">Log in</button>
@@ -15,3 +38,4 @@
   {% csrf_token %}
   <button type="submit">Log Out</button>
 </form>
+{% endblock %}
