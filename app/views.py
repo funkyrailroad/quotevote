@@ -49,7 +49,7 @@ class VoteOnQuotesVoteView(UpdateView):
     model = VoteOnQuotes
     form_class = VoteOnQuotesVoteForm
     template_name_suffix = "_vote"
-    success_url = reverse_lazy("vote-on-quotes-create")
+    success_url = reverse_lazy("vote-on-quotes-create-vote-pair")
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -76,4 +76,4 @@ def create_vote_pair(request):
         quote_2=quote_2,
         user=request.user,
     )
-    return redirect("vote-next")
+    return redirect("vote-on-quotes-vote", pk=vote.pk)

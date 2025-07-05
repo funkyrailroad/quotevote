@@ -30,7 +30,7 @@ urlpatterns = [
     path(
         "vote-on-quotes/create-vote-pair",
         create_vote_pair,
-        name="vote-on-quotes-create",
+        name="vote-on-quotes-create-vote-pair",
     ),
     path(
         "vote-on-quotes/create",

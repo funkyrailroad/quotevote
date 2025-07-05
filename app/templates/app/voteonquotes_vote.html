@@ -4,22 +4,25 @@
 
 <div class="row">
   <div class="col-md-6">
+    <form method="post" name="winner" value="{{object.quote_1}}">
+        {% csrf_token %}
+        <input type="submit" value="Vote">
+    </form>
     {{ object.quote_1.text }}
   </div>
+
+
   <div class="col-md-6">
+    <form method="post" name="winner" value="{{object.quote_2}}">
+        {% csrf_token %}
+        <input type="submit" value="Vote">
+    </form>
     {{ object.quote_2.text }}
   </div>
 </div>
 
-<div class="col-md-6"> 
-  Created at: {{ object.created_at }}
-</div>
+<a href="{% url 'home' %}">
+  Home
+</a>
 
-<form method="post">{% csrf_token %}
-
-    {{ form.winner.label_tag }}
-    {{ form.winner }}
-
-    <input type="submit" value="Save">
-</form>
 {% endblock %}

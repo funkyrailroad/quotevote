@@ -22,7 +22,13 @@ class Quote(models.Model):
 class VoteOnQuotes(models.Model):
     quote_1 = models.ForeignKey(Quote, on_delete=models.CASCADE, related_name="quote_1")
     quote_2 = models.ForeignKey(Quote, on_delete=models.CASCADE, related_name="quote_2")
-    winner = models.ForeignKey(Quote, on_delete=models.CASCADE, related_name="winner")
+    winner = models.ForeignKey(
+        Quote,
+        on_delete=models.CASCADE,
+        related_name="winner",
+        blank=True,
+        null=True,
+    )
     user = models.ForeignKey(
         get_user_model(), on_delete=models.CASCADE, related_name="votes"
     )
