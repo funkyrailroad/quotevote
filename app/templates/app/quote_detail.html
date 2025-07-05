@@ -1,0 +1,14 @@
+<h1>{{ object.author }}</h1>
+<p>{{ object.text }}</p>
+
+
+<a href="{% url 'quote-update' quote.id %}">
+  Update
+</a>
+<a href="{% url 'quote-delete' quote.id %}">
+  Delete
+</a>
+
+<a href="{% url 'quote-list' %}">
+  All quotes
+</a>

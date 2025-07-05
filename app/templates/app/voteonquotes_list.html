@@ -1,0 +1,19 @@
+<h1>Votes on Quotes</h1>
+
+<a href="{% url 'quote-create' %}">
+  Create
+</a>
+
+<ul>
+{% for vote_on_quotes in object_list %}
+    <li>
+      <a href="{% url 'vote-on-quotes-detail' vote_on_quotes.id %}">
+        {{ vote_on_quotes.quote_1 }} - 
+        {{ vote_on_quotes.quote_2 }}
+        {{ vote_on_quotes.winner }}
+      </a>
+    </li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>

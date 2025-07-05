@@ -1,0 +1,17 @@
+<a href="{% url 'quote-list' %}">
+  List Quotes
+</a>
+
+<a href="{% url 'vote-on-quotes-create' %}">
+  Create a vote
+</a>
+
+<form action="{% url 'accounts:login' %}" method="get">
+  <button type="submit">Log in</button>
+</form>
+
+
+<form action="{% url 'accounts:logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit">Log Out</button>
+</form>

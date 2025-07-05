@@ -1,0 +1,19 @@
+<h1>Vote on Quotes</h1>
+
+<h2>ID</h2>
+<p>{{ object.id }}</p>
+
+<h2>Quote 1</h2>
+<p>{{ object.quote_1 }}</p>
+
+<h2>Quote 2</h2>
+<p>{{ object.quote_2 }}</p>
+
+<h2>Winner</h2>
+<p>{{ object.winner }}</p>
+
+
+
+<a href="{% url 'vote-on-quotes-vote' object.id %}">
+  Vote
+</a>

@@ -1,0 +1,25 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-6">
+    {{ object.quote_1.text }}
+  </div>
+  <div class="col-md-6">
+    {{ object.quote_2.text }}
+  </div>
+</div>
+
+<div class="col-md-6"> 
+  Created at: {{ object.created_at }}
+</div>
+
+<form method="post">{% csrf_token %}
+
+    {{ form.winner.label_tag }}
+    {{ form.winner }}
+
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

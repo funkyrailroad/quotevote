@@ -1,0 +1,19 @@
+<h1>Quotes</h1>
+<a href="{% url 'quote-create' %}">
+  Create
+</a>
+<ul>
+{% for quote in object_list %}
+    <li>
+      <a href="{% url 'quote-detail' quote.id %}">
+        {{ quote.text }} - <strong>{{ quote.author }}</strong>
+      </a>
+    </li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'home' %}">
+  Home
+</a>
