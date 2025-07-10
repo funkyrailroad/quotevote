@@ -4,20 +4,38 @@
 
 <div class="row">
   <div class="col-md-6">
-    <form method="post" name="winner" value="{{object.quote_1}}">
-        {% csrf_token %}
-        <input type="submit" value="Vote">
+    <form method="post" class="w-100 h-100">
+      {% csrf_token %}
+      <input type="hidden" name="winner" value="{{ object.quote_1.id }}">
+      <button type="submit" class="w-100 h-100 border-0 p-0 text-start bg-transparent">
+        <div class="p-3 border rounded shadow-sm hover-bg">
+          <div class="row">
+            {{ object.quote_1.text }}
+          </div>
+          <div class="row">
+            - {{ object.quote_1.author }}
+          </div>
+        </div>
+      </button>
     </form>
-    {{ object.quote_1.text }}
   </div>
 
 
   <div class="col-md-6">
-    <form method="post" name="winner" value="{{object.quote_2}}">
-        {% csrf_token %}
-        <input type="submit" value="Vote">
+    <form method="post" class="w-100 h-100">
+      {% csrf_token %}
+      <input type="hidden" name="winner" value="{{ object.quote_2.id }}">
+      <button type="submit" class="w-100 h-100 border-0 p-0 text-start bg-transparent">
+        <div class="p-3 border rounded shadow-sm hover-bg">
+          <div class="row">
+            {{ object.quote_2.text }}
+          </div>
+          <div class="row">
+            - {{ object.quote_2.author }}
+          </div>
+        </div>
+      </button>
     </form>
-    {{ object.quote_2.text }}
   </div>
 </div>
 
