@@ -2,6 +2,20 @@
 
 {% block content %}
 
+
+<div>
+  <a href="{% url 'vote-on-quotes-create-vote-pair' %}">
+    Cast a vote!
+  </a>
+</div>
+
+<div>
+  <a href="{% url 'mostwins-list' %}">
+    Quotes with most wins!
+  </a>
+</div>
+
+
 <h1>Quotes</h1>
 
 <div>

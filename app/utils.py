@@ -1,6 +1,6 @@
 from django.db.models import Count
 
-from .models import Quote, VoteOnQuotes
+from .models import Quote
 
 
 def get_quotes_with_top_n_votes(n=None) -> list[Quote]:
