@@ -6,10 +6,17 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from .forms import VoteOnQuotesVoteForm
 from .models import Quote, VoteOnQuotes
+from .utils import get_quotes_with_top_n_votes
 
 
 def home(request):
     return render(request, "app/home.html")
+
+
+class MostWinsListView(ListView):
+    model = Quote
+    template_name = "app/mostwins_list.html"
+    queryset = get_quotes_with_top_n_votes()
 
 
 class QuoteListView(ListView):

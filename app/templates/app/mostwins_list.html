@@ -1,0 +1,44 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<h1>Quotes ordered by wins</h1>
+
+
+<div class="container mt-4">
+  {% for quote in object_list %}
+  <div class="card mb-3 shadow-sm">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <div>
+        <blockquote class="blockquote mb-0">
+          <p>{{ quote.text }}</p>
+          {% if quote.author %}
+          <footer class="blockquote-footer mt-1">
+            <div class="row  align-items-start">
+              <div class="col">
+                {{ quote.author }}
+              </div>
+              <div class="col">
+                <a href="{% url 'quote-detail' quote.id %}">
+                  Quote detail
+                </a>
+              </div>
+            </div>
+          </footer>
+          {% endif %}
+        </blockquote>
+      </div>
+      <div class="text-end">
+        <span class="badge bg-primary fs-6">{{ quote.win_count }} wins</span>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+      <li>No votes yet.</li>
+  {% endfor %}
+</div>
+
+
+<a href="{% url 'home' %}">
+  Home
+</a>
+{% endblock %}

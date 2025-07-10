@@ -1,6 +1,7 @@
 from django.urls import path
 
 from .views import (
+    MostWinsListView,
     QuoteCreateView,
     QuoteDeleteView,
     QuoteDetailView,
@@ -22,6 +23,7 @@ urlpatterns = [
     path("quotes/create", QuoteCreateView.as_view(), name="quote-create"),
     path("quotes/<int:pk>/update", QuoteUpdateView.as_view(), name="quote-update"),
     path("quotes/<int:pk>/delete", QuoteDeleteView.as_view(), name="quote-delete"),
+    path("stats/most-wins", MostWinsListView.as_view(), name="mostwins-list"),
     path(
         "vote-on-quotes",
         VoteOnQuotesListView.as_view(),
