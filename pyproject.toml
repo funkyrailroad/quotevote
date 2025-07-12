@@ -14,7 +14,6 @@ dev = [
     "django-debug-toolbar>=5.2.0",
     "isort>=6.0.1",
     "jedi>=0.19.2",
-    "pdbpp>=0.11.6",
     "rope>=1.13.0",
     "ropevim>=0.8.1",
     "ruff>=0.12.2",
