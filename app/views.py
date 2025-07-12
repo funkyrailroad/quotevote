@@ -21,7 +21,7 @@ class MostWinsListView(ListView):
 
 class MyMostWinsListView(ListView):
     model = Quote
-    template_name = "app/mostwins_list.html"
+    template_name = "app/my_mostwins_list.html"
 
     def get_queryset(self):
         user = self.request.user
