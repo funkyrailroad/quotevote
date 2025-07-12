@@ -6,7 +6,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from .forms import VoteOnQuotesVoteForm
 from .models import Quote, VoteOnQuotes
-from .utils import get_quotes_with_top_n_votes
+from .utils import get_quotes_with_top_n_votes, get_quotes_with_top_n_votes_for_user
 
 
 def home(request):
@@ -17,6 +17,15 @@ class MostWinsListView(ListView):
     model = Quote
     template_name = "app/mostwins_list.html"
     queryset = get_quotes_with_top_n_votes()
+
+
+class MyMostWinsListView(ListView):
+    model = Quote
+    template_name = "app/my_mostwins_list.html"
+
+    def get_queryset(self):
+        user = self.request.user
+        return get_quotes_with_top_n_votes_for_user(user.id)
 
 
 class QuoteListView(ListView):
