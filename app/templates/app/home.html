@@ -2,6 +2,7 @@
 
 {% block content %}
 
+<h1>Quote Voter</h1>
 
 <div>
   <a href="{% url 'vote-on-quotes-create-vote-pair' %}">
@@ -22,40 +23,27 @@
 </div>
 
 
-<h1>Quotes</h1>
 
-<div>
-  <a href="{% url 'quote-list' %}">
-    List Quotes
-  </a>
-</div>
-
-<div>
-  <a href="{% url 'vote-on-quotes-create' %}">
-    Create a vote
-  </a>
-</div>
-
-<div>
-  <a href="{% url 'vote-on-quotes-create-vote-pair' %}">
-    Get pair to vote on
-  </a>
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form action="{% url 'accounts:login' %}" method="get">
+          <button class="btn btn-primary" type="submit">Log in</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
-<h1>Votes on Quotes</h1>
-<div>
-  <a href="{% url 'vote-on-quotes-list' %}">
-    List Votes on Quotes
-  </a>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <form action="{% url 'accounts:logout' %}" method="post">
+          {% csrf_token %}
+          <button class="btn btn-primary" type="submit">Log Out</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-<form action="{% url 'accounts:login' %}" method="get">
-  <button type="submit">Log in</button>
-</form>
-
-
-<form action="{% url 'accounts:logout' %}" method="post">
-  {% csrf_token %}
-  <button type="submit">Log Out</button>
-</form>
 {% endblock %}
